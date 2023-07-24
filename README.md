@@ -6,7 +6,7 @@ Ding! is a real-time messaging pwa application that allows users to connect and 
 
 The app is built using Node.js, Express.js framework for the backend, EJS template engine for rendering views, jQuery for the frontend, MySQL as the database, and Socket.io for real-time communication.
 
-<img src="public/images/ding-preview.gif" width="320px">
+<img src="public/images/ding-preview.gif">
 
 ## Features
 
