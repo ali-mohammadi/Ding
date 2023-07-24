@@ -1,0 +1,106 @@
+<% include ../partials/header %>
+
+<section id="welcome" class="page initial" data-next="#phonenumber">
+    <div class="page-inner d-flex flex-column justify-content-center align-items-center">
+        <div class="container-fluid text-center">
+            <div class="logo">
+                <div class="col-8 m-auto"><img src="images/logo-brand.png" class="img-fluid"></div>
+            </div>
+            <div class="description my-5 text-center">
+                <p class="mb-0"></p>
+                <p>A <strong>free</strong> and <strong>not secure</strong> messenger!</p>
+            </div>
+            <div class="buttons">
+                <a class="btn btn-deep-purple btn-lg page-btn next">Start Messaging</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="phonenumber" class="page" data-prev="#welcome" data-next="#register">
+    <div class="page-inner d-flex flex-column">
+        <nav class="navbar navbar-dark deep-purple">
+            <div class="navbar-brand">
+                <p class="mb-0">Your Phone</p>
+            </div>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center p-0 page-btn next" callback="verifyPhone">Next
+                        <i class="material-icons ml-1">
+                            chevron_right
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col">
+                    <div class="md-form w-100">
+                        <input type="text" id="country" class="form-control border-bottom" placeholder="IR" disabled>
+                        <label for="country" class="disabled">Counrty</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="md-form w-100">
+                        <input type="text" id="phone-code" class="form-control border-bottom" placeholder="+98"
+                               disabled>
+                        <label for="phone-code" class="disabled">Code</label>
+                    </div>
+                </div>
+
+                <div class="col-9">
+                    <div class="md-form w-100">
+                        <input type="tel" id="phone-number" class="form-control">
+                        <label for="phone-number">Phone number</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register" class="page" data-prev="#phonenumber">
+    <div class="page-inner">
+        <nav class="navbar navbar-dark deep-purple">
+            <div class="navbar-brand">
+                <p class="mb-0">Your Profile</p>
+            </div>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center p-0" id="register-submit">Done
+                        <i class="material-icons ml-1">
+                            done
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid p-4">
+            <div class="row mb-2">
+                <div class="col-6 col-md-2 m-auto">
+                    <img src="images/default-profile.png" class="rounded-circle img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="md-form w-100 mb-0">
+                        <input type="text" id="first-name" class="form-control">
+                        <label for="first-name">First Name</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="md-form w-100">
+                        <input type="text" id="last-name" class="form-control">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include ../partials/footer %>

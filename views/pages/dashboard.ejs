@@ -1,0 +1,150 @@
+<% include ../partials/header %>
+
+<section id="chat-list" class="page initial active" data-next="#chat-search">
+    <a class="btn-floating add btn-lg btn-deep-purple page-btn next">
+        <i class="material-icons">create</i>
+    </a>
+    <div class="page-inner">
+        <nav class="navbar navbar-dark deep-purple">
+            <ul class="navbar-nav nav-flex-icons mr-3">
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link d-flex align-items-center p-0">-->
+<!--                        <i class="material-icons">-->
+<!--                            menu-->
+<!--                        </i>-->
+<!--                    </a>-->
+<!--                </li>-->
+            </ul>
+            <div class="navbar-brand chat-status">
+                <p class="mb-0">Connecting...</p>
+            </div>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item mr-3">
+                    <a class="nav-link d-flex align-items-center p-0 page-btn next">
+                        <i class="material-icons ml-1">
+                            search
+                        </i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link d-flex align-items-center p-0">
+                        <i class="material-icons ml-1">
+                            logout
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="chat-list my-2">
+            <%
+            var isFirst = true;
+                    for(var item of list) {
+            %>
+            <div class="chat-list_item d-flex align-items-center waves-effect" data-user-id="<%= item.user_id %>">
+                <div class="chat-list_item__avatar">
+                    <img src="images/default-profile.png" class="rounded-circle">
+                </div>
+                <div class="chat-list_item__info d-flex border-bottom w-100">
+                    <div>
+                        <p class="dark mb-0 black-text name" style="font-weight: 500"><%= item.name %></p>
+                        <p class="mb-0 grey-text message"><%= item.message %></p>
+                    </div>
+                    <div class="ml-auto chat-list_item__meta d-flex flex-column align-items-end">
+                        <time class="time grey-text font-small mb-1"><%= item.date %></time>
+                        <% if(item.unseen > 0) { %>
+                        <div class="unseen deep-purple white-text rounded-circle"><%= item.unseen %></div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+<section id="chat-window" class="page" data-prev="#chat-list">
+    <nav class="navbar navbar-dark deep-purple">
+        <ul class="navbar-nav nav-flex-icons mr-3">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center p-0 page-btn">
+                    <i class="material-icons">
+                        arrow_back
+                    </i>
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-avatar chat-window_avatar">
+            <img src="images/default-profile.png" class="rounded-circle">
+        </div>
+        <div class="chat-window_name_status ml-3 text-white">
+            <p class="mb-0 name"></p>
+            <p class="mb-0 status"></p>
+        </div>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center p-0">
+                    <i class="material-icons">
+                        more_vert
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="messages-box">
+        <ul class="messages-list" id="messages-list">
+    </div>
+    </ul>
+    <div class="chat-send-box">
+        <div class="row d-flex-align-items-center h-100">
+            <div class="col d-flex align-items-center">
+                <input type="text" id="message" class="form-control border-0 chat-message" placeholder="Message">
+            </div>
+            <div class="col-auto d-flex align-items-center">
+                <a href="#" id="submit-message" class="btn-floating btn-deep-purple text-light btn-sm m-0">
+                    <i class="material-icons">
+                        send
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="chat-search" class="page" data-prev="#chat-list">
+    <nav class="navbar navbar-dark deep-purple">
+        <ul class="navbar-nav nav-flex-icons mr-3">
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center p-0 page-btn">
+                    <i class="material-icons">
+                        arrow_back
+                    </i>
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-brand">
+            <p class="mb-0">Search</p>
+        </div>
+        <ul class="navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item">
+                <a herf="#" class="nav-link d-flex align-items-center p-0" id="find-friend-submit">
+                    <i class="material-icons">
+                        done
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col">
+                <div class="md-form w-100">
+                    <input type="text" id="find-friend" class="form-control">
+                    <label for="find-friend">Phone number</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<% include ../partials/footer %>

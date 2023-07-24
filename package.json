@@ -1,0 +1,23 @@
+{
+  "name": "ding-messenger",
+  "version": "1.0.0",
+  "description": "A simple chat app using Express.js and Socket.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Mohammadi",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cookieparser": "^0.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0"
+  }
+}
